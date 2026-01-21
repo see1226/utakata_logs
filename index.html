@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWA-PRO Analysis Terminal</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,39 +11,65 @@
 
     <section id="login-screen" class="container">
         <div class="terminal-box">
-            <h1 class="glitch-text">AUTHENTICATION</h1>
+            <h1 class="glitch-text" data-text="AUTHENTICATION">観察報告ページ</h1>
             <p>ENTER ACCESS CODE</p>
             <input type="password" id="passInput" maxlength="4" placeholder="****" autofocus>
-            <p id="errorMsg" style="color: var(--alert); font-size: 0.8rem;"></p>
+            <p id="errorMsg"></p>
         </div>
     </section>
 
     <main id="log-screen" class="container hidden">
         <header>
             <div>PROJECT: AWA-PRO</div>
-            <div>STATUS: <span class="status-badge">OBSERVING</span></div>
+            <div>STATUS: <span class="status-badge" id="system-status">OBSERVING</span></div>
         </header>
 
         <h1>Subject: Utakata Sumika</h1>
-        <p>識別ID: US-004 // 解析深度: Level 2</p>
+        <p>識別ID: US-004 // 解析深度: <span id="depth-level">Level 2</span></p>
         <hr style="border-color: var(--text-dim); opacity: 0.3;">
 
         <section id="logs">
             <div class="log-entry">
-                <div class="date">2026-01-16 04:23:11</div>
-                <p>対象の活動を確認。音声波形に異常な乱れあり。<br>
-                通常の生物には見られない<span class="redacted">周波数帯域</span>を使用している可能性が高い。</p>
+                <div class="date">xxxx/xx/xx xx:xx</div>
+                <p>[REPORT] 対象US-004の周囲で、極小の「泡」が空中を浮遊する現象を確認。泡に触れた精密機器が一時的にフリーズする。<br>
+                担当研究員一名が「耳鳴りが心地よい」と報告。聴覚保護具の装着をレベル3へ引き上げ。</p>
             </div>
 
             <div class="log-entry">
-                <div class="date">2026-01-18 11:45:00</div>
-                <p>摂食行動の観察に失敗。対象は物理的な餌を認識していない？<br>
-                まるで<span class="glitch-text">情報そのもの</span>を吸収しているようだ。</p>
+                <div class="date">xxxx/xx/xx xx:xx</div>
+                <p>[ALERT] 観測室の音声モニタに原因不明のノイズ混入。解析の結果、デジタルフィルタを潜り抜けた「微細なハミング」と判明。</p>
+                <pre class="waveform-aa">
+[ANALYSIS: SONIC WAVEFORM - US-004]
+ 
+ 100% |          _  
+      |  _      / \      _   _
+      | / \    /   \    / \ / \  _
+  50% |/   \__/     \__/   v   \/ \
+      |      (ERROR: FREQUENCY OVERFLOW)
+   0% |________________________________
+ < CAUTION: DO NOT ATTEMPT TO RECONSTRUCT >
+                </pre>
             </div>
-            
+
             <div class="log-entry">
-                <div class="date">----/--/-- --:--:--</div>
-                <p style="color: var(--alert);">[WARNING] 観測データの整合性が取れません。</p>
+                <div class="date">xxxx/xx/xx xx:xx</div>
+                <p>[CRITICAL] 隔離エリアBにて収容違反が発生。隔離中の研究員が自力で防音扉を破壊。<br>
+                彼は<span class="redacted">「泡になる、やっと救われる」</span>と繰り返し発言。鼓膜は自傷行為により破壊されていた。</p>
+            </div>
+
+            <div class="log-entry warning-flash">
+                <div class="date">xxxx/xx/xx xx:xx</div>
+                <p>[ERROR] 施設内通信が途絶。自動ログシステムのみ稼働中。対象の「歌」が全館放送システムから流出。<br>
+                死傷者数：142名。生存者：不明。</p>
+            </div>
+
+            <div class="log-entry contamination-log">
+                <div class="date">xxxx/xx/xx --:--</div>
+                <p><span class="glitch-text">彼女の声は、救いだ。</span><br>
+                <span class="glitch-text">なぜ今までこれほど美しい響きを無視していたのか。</span><br>
+                これを読んでいる君。君も聴こえるだろう？<br>
+                もっと、もっと彼女の歌を――<br>
+                <span class="redacted">（ここから先は文字化けにより判読不能）</span></p>
             </div>
         </section>
     </main>
