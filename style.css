@@ -1,0 +1,104 @@
+:root {
+    --main-color: #1ab6d2; /* 寄せてほしいと言っていた青系 */
+    --bg-dark: #050a0f;
+    --text-dim: #3a5b63;
+    --alert: #ff4a4a;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--main-color);
+    font-family: var(--font-mono);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 走査線エフェクト */
+.scanline {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+}
+
+.container { width: 100%; max-width: 800px; }
+
+header {
+    border-bottom: 2px solid var(--text-dim);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-badge {
+    background: var(--text-dim);
+    color: var(--bg-dark);
+    padding: 2px 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.log-entry {
+    border-left: 3px solid var(--text-dim);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.log-entry:hover {
+    border-left-color: var(--main-color);
+    background: rgba(26, 182, 210, 0.05);
+}
+
+/* アップロードされたファイルのグリッチ挙動を再現 */
+.glitch-text {
+    animation: glitch 1s infinite alternate;
+    display: inline-block;
+}
+
+@keyframes glitch {
+    0% { opacity: 1; transform: skew(0deg); }
+    20% { opacity: 0.8; transform: skew(-2deg); }
+    40% { opacity: 1; transform: skew(2deg); }
+    80% { opacity: 1; transform: skew(0deg); }
+    100% { opacity: 0.7; transform: skew(0deg); }
+}
+
+/* 隠し文字（選択すると見える） */
+.redacted {
+    background-color: var(--main-color);
+    color: var(--main-color);
+    cursor: help;
+}
+.redacted::selection {
+    background-color: var(--bg-dark);
+    color: var(--alert);
+}
+
+/* ログイン画面用のスタイル */
+.hidden { display: none !important; }
+.terminal-box {
+    border: 1px solid var(--main-color);
+    padding: 40px;
+    text-align: center;
+}
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+}

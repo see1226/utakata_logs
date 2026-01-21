@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AWA-PRO Analysis Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+
+    <section id="login-screen" class="container">
+        <div class="terminal-box">
+            <h1 class="glitch-text">AUTHENTICATION</h1>
+            <p>ENTER ACCESS CODE</p>
+            <input type="password" id="passInput" maxlength="4" placeholder="****" autofocus>
+            <p id="errorMsg" style="color: var(--alert); font-size: 0.8rem;"></p>
+        </div>
+    </section>
+
+    <main id="log-screen" class="container hidden">
+        <header>
+            <div>PROJECT: AWA-PRO</div>
+            <div>STATUS: <span class="status-badge">OBSERVING</span></div>
+        </header>
+
+        <h1>Subject: Utakata Sumika</h1>
+        <p>識別ID: US-004 // 解析深度: Level 2</p>
+        <hr style="border-color: var(--text-dim); opacity: 0.3;">
+
+        <section id="logs">
+            <div class="log-entry">
+                <div class="date">2026-01-16 04:23:11</div>
+                <p>対象の活動を確認。音声波形に異常な乱れあり。<br>
+                通常の生物には見られない<span class="redacted">周波数帯域</span>を使用している可能性が高い。</p>
+            </div>
+
+            <div class="log-entry">
+                <div class="date">2026-01-18 11:45:00</div>
+                <p>摂食行動の観察に失敗。対象は物理的な餌を認識していない？<br>
+                まるで<span class="glitch-text">情報そのもの</span>を吸収しているようだ。</p>
+            </div>
+            
+            <div class="log-entry">
+                <div class="date">----/--/-- --:--:--</div>
+                <p style="color: var(--alert);">[WARNING] 観測データの整合性が取れません。</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
